@@ -18,3 +18,25 @@ docker exec -it squid2 tail -f /var/log/squid3/access.log
 [Squid instance IP]()
 
 docker-machine ip default
+
+[Create browser bookmark to execute JS](http://stackoverflow.com/questions/18872679/function-as-google-chrome-bookmark)
+javascript:(function(){var d=document,e=d.getElementById("someElement");e.value="some value";})();
+
+[Get selected text from the webpage in Chrome](http://stackoverflow.com/questions/3074630/get-the-selected-text-of-a-web-page-in-google-chrome-extension)
+
+var selection = window.getSelection(); 
+var range = selection.getRangeAt(0); 
+if (range) { 
+  var div = document.createElement('div'); 
+  div.appendChild(range.cloneContents()); 
+  alert(div.innerHTML); 
+}
+
+## Bookmarklet
+
+javascript:(function(){if(!window.selections) { window.selections = new Array(); }; var s = window.getSelection(); var r = s.getRangeAt(0); if (r) { var d = document.createElement('div'); d.appendChild(r.cloneContents()); window.selections.push(d.innerHTML); } alert(window.selections);})();
+
+## Similar Users
+
+[Mark Ashley Bell](http://markb.co.uk/building-a-simple-google-chrome-extension.html)
+I have a web app running on my home server to keep track of my bookmarks—it's a little like Delicious, but simpler and with some personal customisations. Currently I save bookmarks to this app via a Javascript bookmarklet: clicking it gets the current page's title and url (and also any selected text, to use as a summary) and sends it to a popup form; submitting that form then saves the bookmark data to the server.
