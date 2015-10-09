@@ -34,7 +34,14 @@ if (range) {
 
 ## Bookmarklet
 
+
+### Copy selected text
+
 javascript:(function(){if(!window.selections) { window.selections = new Array(); }; var s = window.getSelection(); var r = s.getRangeAt(0); if (r) { var d = document.createElement('div'); d.appendChild(r.cloneContents()); window.selections.push(d.innerHTML); } alert(window.selections);})();
+
+### Send all selections to Squid
+
+javascript:void((function(){var s=document.createElement('script');s.type='text/javascript';s.src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js';document.body.appendChild(s); $.get("http://nonexistenthost.com/", function(data) {}); })());
 
 ## Similar Users
 
