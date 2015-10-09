@@ -32,6 +32,26 @@ if (range) {
   alert(div.innerHTML); 
 }
 
+[Send text to Squid](http://stackoverflow.com/questions/5239432/is-is-possible-to-make-ajax-calls-from-a-bookmarklet)
+
+javascript:function iprl5(){
+  var d=document,
+  z=d.createElement('scr'+'ipt'),
+  b=d.body,
+  l=d.location;
+
+  try{
+    if(!b)throw(0);
+    d.title='(Saving...)'+d.title;
+    z.setAttribute('src',l.protocol+'//www.instapaper.com/j/xxxxxxxx?u='+encodeURIComponent(l.href)+'&t='+(new Date().getTime()));
+    b.appendChild(z);
+  } catch(e) {
+    alert('Please wait until the page has loaded.');
+  }
+}
+iprl5();
+void(0)
+
 ## Bookmarklet
 
 
@@ -41,9 +61,14 @@ javascript:(function(){if(!window.selections) { window.selections = new Array();
 
 ### Send all selections to Squid
 
-javascript:void((function(){var s=document.createElement('script');s.type='text/javascript';s.src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js';document.body.appendChild(s); $.get("http://nonexistenthost.com/", function(data) {}); })());
+javascript:(function(){var d=document,s=d.createElement('script'),t=d.title;t=t.split(" ").join("-");s.setAttribute('src','http://nonexistenthost.com/'+t);d.body.appendChild(s);})();
+
+don't forget about adding the protocol
+
 
 ## Similar Users
 
 [Mark Ashley Bell](http://markb.co.uk/building-a-simple-google-chrome-extension.html)
 I have a web app running on my home server to keep track of my bookmarks—it's a little like Delicious, but simpler and with some personal customisations. Currently I save bookmarks to this app via a Javascript bookmarklet: clicking it gets the current page's title and url (and also any selected text, to use as a summary) and sends it to a popup form; submitting that form then saves the bookmark data to the server.
+
+[Instapaper](https://www.instapaper.com/)
