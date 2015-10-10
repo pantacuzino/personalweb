@@ -19,6 +19,16 @@ docker exec -it squid2 tail -f /var/log/squid3/access.log
 
 docker-machine ip default
 
+[Creating and mounting a data volume container](https://docs.docker.com/userguide/dockervolumes/)
+
+$ docker run -d -P --name web -v /webapp training/webapp python app.py
+$ docker run -d -P --name web -v /src/webapp:/opt/webapp training/webapp python app.py
+This will mount the host directory, /src/webapp, into the container at /opt/webapp.
+
+[Django Development With Docker Compose and Machine](https://realpython.com/blog/python/django-development-with-docker-compose-and-machine/)
+
+
+
 [Create browser bookmark to execute JS](http://stackoverflow.com/questions/18872679/function-as-google-chrome-bookmark)
 javascript:(function(){var d=document,e=d.getElementById("someElement");e.value="some value";})();
 
