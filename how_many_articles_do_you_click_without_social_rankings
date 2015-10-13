@@ -1,0 +1,9 @@
+[HackerNews](https://news.ycombinator.com) contains a list of 30 articles on it's frontpage. An article contains the number of comments and the number of upvotes. How influenced are you by those?
+
+1. Retrieving HN frontpage articles
+2. Removing number of comments and number of upvotes from the page
+3. Removing domain of the article
+3. Randomizing articles
+4. Voila
+
+- Hide domains
